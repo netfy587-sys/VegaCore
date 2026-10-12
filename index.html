@@ -1,0 +1,203 @@
+<body>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Times New Roman',serif;color:#2a2522;background:#faf6f1;line-height:1.8}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px;margin:0 auto;padding:0 20px}
+header{background:#2a2522;position:sticky;top:0;z-index:9}
+.nav{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{font-size:25px;font-weight:700;color:#ff8a4c;letter-spacing:1px}
+.nav a.l{margin-left:22px;font-family:Arial,sans-serif;font-size:14px;color:#e6dcd2}
+.hero{background:linear-gradient(rgba(42,37,34,.4),rgba(42,37,34,.9)),url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201600%20800%27%20width%3D%271600%27%20height%3D%27800%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20440.00000000000006%20Q480.0%20400.0%20960.0%20448.00000000000006%20T1600%20432.0%20V800%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20520.0%20Q480.0%20480.0%20960.0%20528.0%20T1600%20512.0%20V800%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20600.0%20Q480.0%20560.0%20960.0%20608.0%20T1600%20592.0%20V800%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20680.0000000000001%20Q480.0%20640.0%20960.0%20688.0000000000001%20T1600%20672.0000000000001%20V800%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%271312.0%27%20cy%3D%27200.0%27%20r%3D%27160.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27416.0%27%20text-anchor%3D%27middle%27%20font-size%3D%27440%27%20opacity%3D%270.5%27%3E%F0%9F%8C%8B%3C%2Ftext%3E%3C%2Fsvg%3E') center/cover;color:#fff;padding:130px 0 120px;text-align:center}
+.hero small{font-family:Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;font-size:13px;color:#ffb27d}
+.hero h1{font-size:50px;line-height:1.15;margin:14px auto 18px;max-width:860px}
+.hero p{max-width:720px;margin:0 auto 28px;font-size:18px;color:#f0e6dc}
+.btn{display:inline-block;background:#e8590c;color:#fff;padding:13px 32px;border-radius:6px;font-family:Arial,sans-serif;font-size:15px;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-48px;position:relative}
+.stats div{background:#fff;border-radius:10px;padding:22px;text-align:center;box-shadow:0 10px 28px rgba(42,37,34,.15);border-bottom:4px solid #e8590c}
+.stats b{display:block;font-size:30px;color:#c2410c;font-family:Arial,sans-serif}
+.stats span{font-family:Arial,sans-serif;font-size:13px;color:#7a6c60}
+.sec{padding:70px 0}
+.sec h2{font-size:34px;margin-bottom:14px;color:#2a2522}
+.sec p{margin-bottom:16px;color:#54483f}
+.lead{font-size:20px;color:#2a2522!important}
+.tag{font-family:Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#c2410c;margin-bottom:8px;display:block}
+.alt{background:#fff;border-top:1px solid #eadfd3;border-bottom:1px solid #eadfd3}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.grid4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 22px rgba(42,37,34,.09);border:1px solid #eadfd3}
+.card img{width:100%;height:170px;object-fit:cover;display:block}
+.card div{padding:18px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{font-size:14.5px;margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.split img{width:100%;height:340px;object-fit:cover;border-radius:10px}
+.rings{display:flex;justify-content:center}
+.r1{width:340px;height:340px;border-radius:50%;background:#7a5c3a;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(42,37,34,.25)}
+.r2{width:300px;height:300px;border-radius:50%;background:#b5651d;display:flex;align-items:center;justify-content:center}
+.r3{width:220px;height:220px;border-radius:50%;background:#e8590c;display:flex;align-items:center;justify-content:center}
+.r4{width:120px;height:120px;border-radius:50%;background:#ffd166;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#5a2a05;text-align:center}
+.tbl{width:100%;border-collapse:collapse;margin-top:20px;font-family:Arial,sans-serif;font-size:15px}
+.tbl th{background:#2a2522;color:#ffb27d;text-align:left;padding:12px 14px}
+.tbl td{padding:12px 14px;border-bottom:1px solid #eadfd3;color:#54483f}
+.tw{overflow-x:auto}
+.quote{border-left:5px solid #e8590c;background:#fff1e6;padding:22px 28px;border-radius:0 10px 10px 0;font-size:21px;color:#2a2522;margin:26px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.two div{background:#fff;border:1px solid #eadfd3;border-radius:10px;padding:22px}
+.two h4{color:#c2410c;font-size:17px;margin-bottom:6px}
+.two p{margin:0;font-size:15px}
+.steps{counter-reset:s;margin-top:24px}
+.steps div{position:relative;background:#fff;border:1px solid #eadfd3;border-radius:10px;padding:20px 20px 20px 74px;margin-bottom:14px}
+.steps div:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:18px;width:38px;height:38px;border-radius:50%;background:#e8590c;color:#fff;font-family:Arial,sans-serif;font-weight:700;text-align:center;line-height:38px}
+.steps h4{font-size:18px;margin-bottom:4px}
+.steps p{margin:0;font-size:15px}
+details{background:#fff;border:1px solid #eadfd3;border-radius:10px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;font-size:15px}
+.end{background:linear-gradient(#c2410c,#2a2522);color:#fff;text-align:center;padding:80px 0}
+.end h2{font-size:34px;margin-bottom:12px}
+.end p{max-width:680px;margin:0 auto 26px;color:#f6e4d6}
+footer{background:#1a1613;color:#a39588;text-align:center;padding:24px 0;font-family:Arial,sans-serif;font-size:14px}
+@media(max-width:860px){.stats{grid-template-columns:1fr 1fr}.grid,.grid4,.split,.two{grid-template-columns:1fr}.hero h1{font-size:33px}.nav a.l{display:none}.r1{width:290px;height:290px}.r2{width:255px;height:255px}.r3{width:190px;height:190px}}
+</style>
+
+<header><div class="wrap nav"><a class="logo" href="#">VegaCore</a><nav><a class="l" href="#layers">Layers</a><a class="l" href="#plates">Plates</a><a class="l" href="#quakes">Earthquakes</a><a class="l" href="#volcanoes">Volcanoes</a><a class="l" href="#faq">FAQ</a></nav></div></header>
+
+<section class="hero"><div class="wrap">
+<small>A Reading Guide To Our Planet’s Interior</small>
+<h1>Journey To The Center Of The Earth</h1>
+<p>VegaCore explains in simple language what lies beneath our feet: the layers of the planet, the moving plates, and the forces behind earthquakes and volcanoes.</p>
+<a class="btn" href="#layers">Start Reading</a>
+</div></section>
+
+<div class="wrap"><div class="stats">
+<div><b>6,371 km</b><span>distance from surface to centre</span></div>
+<div><b>~5,200 °C</b><span>temperature of the inner core</span></div>
+<div><b>4.5 bn yrs</b><span>approximate age of Earth</span></div>
+<div><b>12 km</b><span>deepest hole ever drilled</span></div>
+</div></div>
+
+<section class="sec" id="layers"><div class="wrap"><div class="split">
+<div class="rings"><div class="r1"><div class="r2"><div class="r3"><div class="r4">Inner core</div></div></div></div></div>
+<div><span class="tag">Chapter 1</span><h2>Four layers, one planet</h2>
+<p class="lead">Earth is built like a peach with a hard stone at its heart: a thin outer skin, a thick middle and a dense core.</p>
+<p>Throughout this VegaCore guide we will use these four layers as a map. Heat left over from Earth’s formation and from radioactive decay keeps the interior hot, and that heat drives almost everything you will read about next.</p></div>
+</div></div></section>
+
+<section class="sec alt"><div class="wrap">
+<div class="tw"><table class="tbl"><tr><th>Layer</th><th>Depth</th><th>What it is made of</th></tr>
+<tr><td>Crust</td><td>5 – 70 km thick</td><td>Solid rock; thin under oceans, thick under mountains</td></tr>
+<tr><td>Mantle</td><td>to about 2,900 km</td><td>Hot, slowly flowing rock that makes up most of Earth’s volume</td></tr>
+<tr><td>Outer core</td><td>2,900 – 5,150 km</td><td>Liquid iron and nickel in constant motion</td></tr>
+<tr><td>Inner core</td><td>5,150 – 6,371 km</td><td>A solid ball of iron and nickel, kept solid by enormous pressure</td></tr></table></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<span class="tag">Chapter 2</span>
+<h2>How do we know what we cannot see?</h2>
+<p style="max-width:760px">Nobody has drilled even a fraction of the way to the centre, so scientists use indirect clues. The most powerful clue is sound.</p>
+<div class="grid grid4">
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20500%20340%27%20width%3D%27500%27%20height%3D%27340%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20187.00000000000003%20Q150.0%20170.0%20300.0%20190.4%20T500%20183.60000000000002%20V340%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20221.0%20Q150.0%20204.0%20300.0%20224.4%20T500%20217.6%20V340%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20255.0%20Q150.0%20237.99999999999997%20300.0%20258.4%20T500%20251.6%20V340%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20289.00000000000006%20Q150.0%20272.0%20300.0%20292.40000000000003%20T500%20285.6%20V340%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27410.0%27%20cy%3D%2785.0%27%20r%3D%2768.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27176.8%27%20text-anchor%3D%27middle%27%20font-size%3D%27136%27%20opacity%3D%271%27%3E%F0%9F%93%88%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27320%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2718%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3ESeismic%20waves%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Seismic waves"><div><h3>Seismic waves</h3><p>Earthquakes send waves through the planet. Their speed and path reveal what they passed through.</p></div></div>
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20500%20340%27%20width%3D%27500%27%20height%3D%27340%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20187.00000000000003%20Q150.0%20170.0%20300.0%20190.4%20T500%20183.60000000000002%20V340%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20221.0%20Q150.0%20204.0%20300.0%20224.4%20T500%20217.6%20V340%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20255.0%20Q150.0%20237.99999999999997%20300.0%20258.4%20T500%20251.6%20V340%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20289.00000000000006%20Q150.0%20272.0%20300.0%20292.40000000000003%20T500%20285.6%20V340%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27410.0%27%20cy%3D%2785.0%27%20r%3D%2768.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27176.8%27%20text-anchor%3D%27middle%27%20font-size%3D%27136%27%20opacity%3D%271%27%3E%F0%9F%8C%8A%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27320%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2718%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3ES-waves%3C%2Ftext%3E%3C%2Fsvg%3E" alt="S-waves"><div><h3>The liquid clue</h3><p>Shear waves cannot cross liquid. Because they vanish on the far side, we know the outer core is liquid.</p></div></div>
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20500%20340%27%20width%3D%27500%27%20height%3D%27340%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20187.00000000000003%20Q150.0%20170.0%20300.0%20190.4%20T500%20183.60000000000002%20V340%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20221.0%20Q150.0%20204.0%20300.0%20224.4%20T500%20217.6%20V340%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20255.0%20Q150.0%20237.99999999999997%20300.0%20258.4%20T500%20251.6%20V340%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20289.00000000000006%20Q150.0%20272.0%20300.0%20292.40000000000003%20T500%20285.6%20V340%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27410.0%27%20cy%3D%2785.0%27%20r%3D%2768.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27176.8%27%20text-anchor%3D%27middle%27%20font-size%3D%27136%27%20opacity%3D%271%27%3E%F0%9F%AA%A8%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27320%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2718%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3ERock%20samples%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Rock samples"><div><h3>Rock samples</h3><p>Volcanoes carry fragments of the mantle upward, giving direct samples of deep rock.</p></div></div>
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20500%20340%27%20width%3D%27500%27%20height%3D%27340%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20187.00000000000003%20Q150.0%20170.0%20300.0%20190.4%20T500%20183.60000000000002%20V340%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20221.0%20Q150.0%20204.0%20300.0%20224.4%20T500%20217.6%20V340%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20255.0%20Q150.0%20237.99999999999997%20300.0%20258.4%20T500%20251.6%20V340%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20289.00000000000006%20Q150.0%20272.0%20300.0%20292.40000000000003%20T500%20285.6%20V340%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27410.0%27%20cy%3D%2785.0%27%20r%3D%2768.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27176.8%27%20text-anchor%3D%27middle%27%20font-size%3D%27136%27%20opacity%3D%271%27%3E%F0%9F%A7%B2%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27320%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2718%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EMagnetism%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Magnetic field"><div><h3>Magnetism</h3><p>Earth’s magnetic field points to moving metal deep inside, as in a giant dynamo.</p></div></div>
+</div>
+</div></section>
+
+<section class="sec alt" id="plates"><div class="wrap"><div class="split">
+<img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20680%27%20width%3D%27900%27%20height%3D%27680%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20374.00000000000006%20Q270.0%20340.0%20540.0%20380.8%20T900%20367.20000000000005%20V680%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20442.0%20Q270.0%20408.0%20540.0%20448.8%20T900%20435.2%20V680%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20510.0%20Q270.0%20475.99999999999994%20540.0%20516.8%20T900%20503.2%20V680%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20578.0000000000001%20Q270.0%20544.0%20540.0%20584.8000000000001%20T900%20571.2%20V680%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27738.0%27%20cy%3D%27170.0%27%20r%3D%27136.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27353.6%27%20text-anchor%3D%27middle%27%20font-size%3D%27272%27%20opacity%3D%271%27%3E%F0%9F%8C%8D%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27660%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2737%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EMoving%20plates%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Tectonic plates">
+<div><span class="tag">Chapter 3</span><h2>Plate tectonics</h2>
+<p>Earth’s crust and the top of the mantle are broken into large pieces called tectonic plates. They drift on the softer rock below at a few centimetres a year, roughly the speed at which fingernails grow.</p>
+<p>Where plates pull apart, new crust forms. Where they collide, mountains rise or one plate sinks beneath another. Where they slide past each other, stress builds along faults. Over millions of years this slow motion has opened oceans and raised the Himalayas.</p></div>
+</div></div></section>
+
+<section class="sec" id="quakes"><div class="wrap">
+<span class="tag">Chapter 4</span>
+<h2>Earthquakes</h2>
+<p style="max-width:760px">An earthquake is the sudden release of stored stress when rock along a fault slips. The point underground where it starts is the focus, and the spot directly above is the epicentre.</p>
+<div class="tw"><table class="tbl"><tr><th>Magnitude</th><th>Typical description</th><th>Roughly how often worldwide</th></tr>
+<tr><td>3 – 3.9</td><td>Often felt indoors, rarely causes damage</td><td>Many thousands per year</td></tr>
+<tr><td>5 – 5.9</td><td>Can damage poorly built structures</td><td>Hundreds per year</td></tr>
+<tr><td>6 – 6.9</td><td>Strong; damage in populated areas</td><td>Over a hundred per year</td></tr>
+<tr><td>7 and above</td><td>Major; can cause widespread destruction</td><td>About a dozen or so per year</td></tr></table></div>
+<p style="margin-top:16px">Each whole number on the magnitude scale means ten times larger ground motion and about thirty-two times more released energy.</p>
+</div></section>
+
+<section class="sec alt" id="volcanoes"><div class="wrap">
+<span class="tag">Chapter 5</span>
+<h2>Volcanoes</h2>
+<p style="max-width:760px">A volcano is an opening where molten rock, called magma, reaches the surface and is known as lava. Most volcanoes sit near plate boundaries, and a famous belt around the Pacific is called the Ring of Fire.</p>
+<div class="grid">
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%20360%27%20width%3D%27600%27%20height%3D%27360%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20198.00000000000003%20Q180.0%20180.0%20360.0%20201.60000000000002%20T600%20194.4%20V360%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20234.0%20Q180.0%20216.0%20360.0%20237.60000000000002%20T600%20230.4%20V360%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20270.0%20Q180.0%20251.99999999999997%20360.0%20273.6%20T600%20266.4%20V360%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20306.00000000000006%20Q180.0%20288.0%20360.0%20309.6%20T600%20302.40000000000003%20V360%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27491.99999999999994%27%20cy%3D%2790.0%27%20r%3D%2772.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27187.20000000000002%27%20text-anchor%3D%27middle%27%20font-size%3D%27144%27%20opacity%3D%271%27%3E%F0%9F%8C%8B%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27340%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2719%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EShield%20volcanoes%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Shield volcano"><div><h3>Shield volcanoes</h3><p>Broad, gentle slopes built by runny lava, as in Hawaii. Eruptions are usually calm.</p></div></div>
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%20360%27%20width%3D%27600%27%20height%3D%27360%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20198.00000000000003%20Q180.0%20180.0%20360.0%20201.60000000000002%20T600%20194.4%20V360%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20234.0%20Q180.0%20216.0%20360.0%20237.60000000000002%20T600%20230.4%20V360%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20270.0%20Q180.0%20251.99999999999997%20360.0%20273.6%20T600%20266.4%20V360%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20306.00000000000006%20Q180.0%20288.0%20360.0%20309.6%20T600%20302.40000000000003%20V360%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27491.99999999999994%27%20cy%3D%2790.0%27%20r%3D%2772.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27187.20000000000002%27%20text-anchor%3D%27middle%27%20font-size%3D%27144%27%20opacity%3D%271%27%3E%F0%9F%8F%94%EF%B8%8F%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27340%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2719%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EStratovolcanoes%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Stratovolcano"><div><h3>Stratovolcanoes</h3><p>Steep cones of layered ash and lava, such as Mount Fuji. Thicker magma can make eruptions explosive.</p></div></div>
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%20360%27%20width%3D%27600%27%20height%3D%27360%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20198.00000000000003%20Q180.0%20180.0%20360.0%20201.60000000000002%20T600%20194.4%20V360%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20234.0%20Q180.0%20216.0%20360.0%20237.60000000000002%20T600%20230.4%20V360%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20270.0%20Q180.0%20251.99999999999997%20360.0%20273.6%20T600%20266.4%20V360%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20306.00000000000006%20Q180.0%20288.0%20360.0%20309.6%20T600%20302.40000000000003%20V360%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27491.99999999999994%27%20cy%3D%2790.0%27%20r%3D%2772.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27187.20000000000002%27%20text-anchor%3D%27middle%27%20font-size%3D%27144%27%20opacity%3D%271%27%3E%E2%99%A8%EF%B8%8F%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27340%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2719%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EHot%20springs%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Geysers and hot springs"><div><h3>Geysers and springs</h3><p>Water heated underground rises to the surface, creating geysers, hot pools and steaming vents.</p></div></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="narrow">
+<span class="tag">Chapter 6</span>
+<h2>The invisible shield</h2>
+<p>Swirling liquid metal in the outer core generates Earth’s magnetic field. This field stretches far into space and deflects much of the charged particle stream flowing from the Sun, helping protect the atmosphere and everything that lives under it.</p>
+<div class="quote">Deep inside the planet, moving metal makes a shield that reaches into space.</div>
+<p>The field is also what makes a compass needle point north, and it creates the glowing auroras near the poles when solar particles meet the upper air.</p>
+</div></section>
+
+<section class="sec alt"><div class="wrap"><div class="split">
+<div><span class="tag">Chapter 7</span><h2>Discover New Options In Geothermal Energy</h2>
+<p>Earth’s internal heat can be used as a clean, steady energy source. In places such as Iceland, hot water from underground is piped into homes for heating, and steam from deep wells spins turbines to produce electricity.</p>
+<p>Unlike sunshine or wind, geothermal heat flows day and night. New technology is also making it possible to tap hot rock in more locations, not only near volcanoes. VegaCore readers often find this the most surprising link between deep geology and daily life.</p></div>
+<img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20680%27%20width%3D%27900%27%20height%3D%27680%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20374.00000000000006%20Q270.0%20340.0%20540.0%20380.8%20T900%20367.20000000000005%20V680%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20442.0%20Q270.0%20408.0%20540.0%20448.8%20T900%20435.2%20V680%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20510.0%20Q270.0%20475.99999999999994%20540.0%20516.8%20T900%20503.2%20V680%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20578.0000000000001%20Q270.0%20544.0%20540.0%20584.8000000000001%20T900%20571.2%20V680%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27738.0%27%20cy%3D%27170.0%27%20r%3D%27136.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27353.6%27%20text-anchor%3D%27middle%27%20font-size%3D%27272%27%20opacity%3D%271%27%3E%E2%9A%A1%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27660%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2737%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EGeothermal%20power%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Geothermal power plant">
+</div></div></section>
+
+<section class="sec"><div class="wrap">
+<span class="tag">Chapter 8</span>
+<h2>Explore What’s Trending In Earth Science</h2>
+<div class="two">
+<div><h4>3D seismic imaging</h4><p>Researchers combine thousands of earthquake recordings to build detailed pictures of the mantle, revealing giant hot plumes and sunken slabs.</p></div>
+<div><h4>Smarter quake detection</h4><p>Machine-learning programs now sift through seismic data to find tiny tremors that human analysts might miss.</p></div>
+<div><h4>Fibre-optic sensing</h4><p>Ordinary telecom cables can act as long lines of sensors that feel ground movement over many kilometres.</p></div>
+<div><h4>Inner-core studies</h4><p>Scientists continue to study how the solid inner core grows and rotates, which helps explain the magnetic field’s history.</p></div>
+</div>
+</div></section>
+
+<section class="sec alt"><div class="narrow">
+<span class="tag">Chapter 9</span>
+<h2>Find Something Better: Building For Earthquakes</h2>
+<p>We cannot stop earthquakes, but good design can save lives. Engineers have developed several ways to help buildings survive shaking.</p>
+<div class="steps">
+<div><h4>Flexible structures</h4><p>Steel frames and reinforced concrete can bend slightly without breaking, absorbing the energy of shaking.</p></div>
+<div><h4>Base isolation</h4><p>Buildings rest on flexible bearings that let the ground move while the structure above stays much calmer.</p></div>
+<div><h4>Strong connections</h4><p>Walls, floors and roofs are tied firmly together so that they move as one unit.</p></div>
+<div><h4>Early warning systems</h4><p>Sensors detect fast waves and send alerts seconds before slower, stronger waves arrive, enough to stop trains and take cover.</p></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<span class="tag">Chapter 10</span>
+<h2>Discover Your Next Pick Among Natural Wonders</h2>
+<p style="max-width:760px">Reading is better with a real place in mind. These landmarks show the ideas from this guide in the real world.</p>
+<div class="grid">
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%20360%27%20width%3D%27600%27%20height%3D%27360%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20198.00000000000003%20Q180.0%20180.0%20360.0%20201.60000000000002%20T600%20194.4%20V360%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20234.0%20Q180.0%20216.0%20360.0%20237.60000000000002%20T600%20230.4%20V360%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20270.0%20Q180.0%20251.99999999999997%20360.0%20273.6%20T600%20266.4%20V360%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20306.00000000000006%20Q180.0%20288.0%20360.0%20309.6%20T600%20302.40000000000003%20V360%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27491.99999999999994%27%20cy%3D%2790.0%27%20r%3D%2772.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27187.20000000000002%27%20text-anchor%3D%27middle%27%20font-size%3D%27144%27%20opacity%3D%271%27%3E%F0%9F%8C%8B%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27340%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2719%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EHawaii%20Volcanoes%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Hawaii Volcanoes National Park"><div><h3>Hawaii Volcanoes</h3><p>A living lesson in shield volcanoes and flowing lava.</p></div></div>
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%20360%27%20width%3D%27600%27%20height%3D%27360%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20198.00000000000003%20Q180.0%20180.0%20360.0%20201.60000000000002%20T600%20194.4%20V360%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20234.0%20Q180.0%20216.0%20360.0%20237.60000000000002%20T600%20230.4%20V360%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20270.0%20Q180.0%20251.99999999999997%20360.0%20273.6%20T600%20266.4%20V360%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20306.00000000000006%20Q180.0%20288.0%20360.0%20309.6%20T600%20302.40000000000003%20V360%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27491.99999999999994%27%20cy%3D%2790.0%27%20r%3D%2772.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27187.20000000000002%27%20text-anchor%3D%27middle%27%20font-size%3D%27144%27%20opacity%3D%271%27%3E%E2%99%A8%EF%B8%8F%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27340%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2719%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EIceland%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Iceland geysers"><div><h3>Iceland</h3><p>Sits on a plate boundary and shows rifts, geysers and geothermal power together.</p></div></div>
+<div class="card"><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20600%20360%27%20width%3D%27600%27%20height%3D%27360%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%236b3a1e%27%2F%3E%3Cstop%20offset%3D%27.5%27%20stop-color%3D%27%23c2410c%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a1208%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Cpath%20d%3D%27M0%20198.00000000000003%20Q180.0%20180.0%20360.0%20201.60000000000002%20T600%20194.4%20V360%20H0Z%27%20fill%3D%27%23ffb27d%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20234.0%20Q180.0%20216.0%20360.0%20237.60000000000002%20T600%20230.4%20V360%20H0Z%27%20fill%3D%27%23e8590c%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20270.0%20Q180.0%20251.99999999999997%20360.0%20273.6%20T600%20266.4%20V360%20H0Z%27%20fill%3D%27%237a2e0b%27%20fill-opacity%3D%27.35%27%2F%3E%3Cpath%20d%3D%27M0%20306.00000000000006%20Q180.0%20288.0%20360.0%20309.6%20T600%20302.40000000000003%20V360%20H0Z%27%20fill%3D%27%232a1208%27%20fill-opacity%3D%27.35%27%2F%3E%3Ccircle%20cx%3D%27491.99999999999994%27%20cy%3D%2790.0%27%20r%3D%2772.0%27%20fill%3D%27%23ffd166%27%20fill-opacity%3D%27.22%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27187.20000000000002%27%20text-anchor%3D%27middle%27%20font-size%3D%27144%27%20opacity%3D%271%27%3E%F0%9F%8F%9E%EF%B8%8F%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27340%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2719%27%20fill%3D%27white%27%20fill-opacity%3D%27.95%27%3EGrand%20Canyon%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Grand Canyon"><div><h3>Grand Canyon</h3><p>Rock layers nearly two billion years deep reveal Earth’s long history.</p></div></div>
+</div>
+</div></section>
+
+<section class="sec alt" id="faq"><div class="narrow">
+<h2>Questions people ask</h2>
+<details><summary>Could we drill all the way to the centre?</summary><p>Not with present technology. The deepest hole ever drilled, in Russia, reached about 12 kilometres, and rising heat and pressure stopped further progress.</p></details>
+<details><summary>Is the centre of the Earth as hot as the Sun?</summary><p>The inner core is estimated at roughly 5,000 to 6,000 degrees Celsius, similar to the Sun’s visible surface, though the Sun’s core is far hotter.</p></details>
+<details><summary>Can earthquakes be predicted?</summary><p>Not precisely. Scientists can estimate where earthquakes are likely and how large they might be, but cannot name the exact day and time.</p></details>
+<details><summary>Why is the inner core solid if it is so hot?</summary><p>The pressure at the centre is so immense that the iron is squeezed into a solid state despite the extreme temperature.</p></details>
+</div></section>
+
+<section class="end"><div class="wrap">
+<h2>The Ground Beneath You Is Alive</h2>
+<p>Our planet is still moving, heating and changing, even if we rarely notice it. We hope this VegaCore guide gives you a new way to think about the ground you stand on.</p>
+<a class="btn" href="#layers">Back To The Top</a>
+</div></section>
+
+<footer><div class="wrap">&copy; 2026 VegaCore. All rights reserved.</div></footer>
+</body>
